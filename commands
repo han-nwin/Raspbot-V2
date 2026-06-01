@@ -1,0 +1,13 @@
+scp -r <path to cs4397-project> pi@192.168.1.11:~
+
+nmcli device wifi list
+nmcli device wifi connect "YOUR_WIFI_NAME" password "YOUR_WIFI_PASSWORD"
+
+nmcli connection show --active
+ip a show wlan0
+ping -c 4 google.com
+
+nmcli connection show
+nmcli connection modify "Raspbot" connection.autoconnect no
+nmcli connection modify "Yahboom2" connection.autoconnect no
+sudo reboot
