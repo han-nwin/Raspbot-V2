@@ -7,6 +7,10 @@ nmcli connection show --active
 ip a show wlan0
 ping -c 4 google.com
 
+nmcli connection modify "HomeWifi" connection.autoconnect-priority 100
+nmcli connection modify "MyPhoneHotspot" connection.autoconnect-priority 50
+nmcli connection modify "OfficeWifi" connection.autoconnect-priority 25
+
 nmcli connection show
 nmcli connection modify "Raspbot" connection.autoconnect no
 nmcli connection modify "Yahboom2" connection.autoconnect no
